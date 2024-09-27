@@ -51,7 +51,7 @@ class ListArray : public List<T> {
 		{
 		   if (pos >= 0 && pos <= n) {
                       if (n == max) {
-                         resize(max * 2);
+                         resize(max+1);
                       }
                    for (int i = n; i > pos; --i) {
                       arr[i] = arr[i - 1];  // Mover elementos a la derecha
@@ -66,22 +66,17 @@ class ListArray : public List<T> {
 		void append(T e) override
 		{
 		   if (n==max){
-		       resize(max*2);
+		       resize(max+1);
 		   }
 		   insert(n,e);
-		   n++;
 		}
 
 		void prepend(T e) override
 		{
 		   if(n==max){
-		      resize(max*2);
+		      resize(max+1);
 		   }
-		   for (int i=n;i>=0;i--){
-                      arr[i+1]=arr[i];
-                   }
 		   insert(0,e);
-		   n++;
 		}
 
 		T remove(int pos) override
@@ -90,9 +85,10 @@ class ListArray : public List<T> {
                        T aux=arr[pos];
 		       // el numero eliminado echarlo al final de la array para hacer una nueva sin ese numero
 		       for (int i = pos; i < n - 1; ++i) {
-                    	   arr[i] = arr[i + 1];  // Mover elementos a la izquierda
+                    	   arr[i] = arr[i + 1];  // Mover elementos a la derecha
                 	}
 		       n--;
+		       resize(n);
 		       return aux;
                    }
                    throw std::out_of_range("posicion fuera del rango");
