@@ -37,7 +37,7 @@ class ListLinked : public List<T>{
        friend std::ostream& operator<<(std::ostream &out, const ListLinked<T> &list) {
           out << "[";
     	  Node<T>* aux = list.first;
-    	  while (aux != nullptr) {  // Cambiado para incluir el último nodo
+    	  while (aux != nullptr) {  
              out << aux->data<< " ";
              aux = aux->next;
              }
