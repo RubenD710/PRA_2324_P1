@@ -18,7 +18,10 @@ Rectangle::Rectangle(std::string color, Point2D* vertices){
 	if (!check(vertices)){
 		throw std::invalid_argument("Los vertices introducidos no forman un rectangulo");
 	}else{
-		vs=vertices;
+		vs = new Point2D[N_VERTICES];
+		for (int i = 0; i < N_VERTICES; ++i) {
+    			vs[i] = vertices[i];
+		}
 	}
 }
 
@@ -51,11 +54,13 @@ Point2D Rectangle::operator[] (int ind) const{
 }
 
 void Rectangle::set_vertices(Point2D* vertices){
-	if(!check(vertices)){
-		throw std::invalid_argument("Los vertices introducidos no forman un rectangulo");
-	}else{
-		vs=vertices;
-	}
+	if (!check(vertices)) {
+        	throw std::invalid_argument("Los vertices introducidos no forman un rectangulo");
+    	} else {
+        for (int i = 0; i < N_VERTICES; ++i) {
+            vs[i] = vertices[i];
+        }
+    }
 }
 
 Rectangle& Rectangle::operator=(const Rectangle &r) {
