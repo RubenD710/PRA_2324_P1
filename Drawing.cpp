@@ -21,7 +21,7 @@ void Drawing::add_back(Shape* shape){
 void Drawing::print_all() {
     std::cout << "Drawing contents: " << std::endl;
     for (int i = 0; i < shapes->size(); i++) {
-        shapes->get(i)->print();  // Llamar a la función virtual print()
+        shapes->get(i)->print();  
     }
 }
 

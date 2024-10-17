@@ -78,7 +78,7 @@ Rectangle& Rectangle::operator=(const Rectangle &r) {
 
 
 std::ostream& operator<<(std::ostream &out, const Rectangle &r){
-	out << "[Rectangle: color = " << r.color << "; v0 = " << r.vs[0] << "; v1 = " << r.vs[1] << "]" << "; v2 = " << r.vs[2] << "; v3 = " << r.vs[3] << std::endl; //cambiar por el metodo print() sin que de error
+	out << "[Rectangle: color = " << r.color << "; v0 = " << r.vs[0] << "; v1 = " << r.vs[1] << "]" << "; v2 = " << r.vs[2] << "; v3 = " << r.vs[3] << std::endl; 
 	return out;
 }
 
@@ -98,6 +98,6 @@ void Rectangle::translate(double incX, double incY){
 }
 
 void Rectangle::print(){
-	std::cout << "[Rectangle: color = " << color << "; v0 = " << vs[0] << "; v1 = " << vs[1] << "; v2 = " << vs[2] << "; v3 = " << vs[3] << "]" << std::endl;
+	std::cout << this << std::endl;
 }
 

@@ -28,7 +28,7 @@ void Circle::set_radius(double r){
 }
 
 std::ostream& operator<<(std::ostream &out, const Circle &c){
-	out << "[Circle: color = " << c.color << "; center = " << c.center << "; radius = " << c.radius << "]" << std::endl; //cambiar por el metodo print() sin que de error
+	out << "[Circle: color = " << c.color << "; center = " << c.center << "; radius = " << c.radius << "]" << std::endl;
 	return out;
 }
 
@@ -45,5 +45,5 @@ void Circle::translate(double incX, double incY){
 }
 
 void Circle::print(){
-	std::cout << "[Circle: color = " << color << "; center = " << center << "; radius = " << radius << "]" << std::endl;
+	std::cout << this << std::endl;
 }
